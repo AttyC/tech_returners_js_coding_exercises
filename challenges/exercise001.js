@@ -60,7 +60,9 @@ export function countLinuxUsers(users) {
 
 export function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
-  // Add your code here!
+
+  const findTotal = (runningTotal, score) => runningTotal + score;
+  return parseFloat((scores.reduce(findTotal) / scores.length).toFixed(2));
 }
 
 export function simpleFizzBuzz(n) {

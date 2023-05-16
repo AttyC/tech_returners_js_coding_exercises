@@ -16,6 +16,7 @@ export function generateInitials(firstName, lastName) {
   return `${firstName.slice(0, 1)}.${lastName.slice(0, 1)}`;
 }
 
+// TRY WITH CHANGING TO NUMBERS STRAIGHT AWAY - USING NUMBER METHODS
 export function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
@@ -32,7 +33,14 @@ export function getSalePrice(originalPrice, reduction) {
 
 export function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");
-  // Add your code here!
+  let start;
+
+  if (str.length % 2 === 0) {
+    start = str.length / 2 - 1;
+    return str.slice(start, start + 2);
+  }
+  start = (str.length - 1) / 2;
+  return str.slice(start, start + 1);
 }
 
 export function reverseWord(word) {

@@ -65,7 +65,10 @@ export function getMeanScore(scores) {
   return parseFloat((scores.reduce(findTotal) / scores.length).toFixed(2));
 }
 
-export function simpleFizzBuzz(n) {
-  if (n === undefined) throw new Error("n is required");
-  // Add your code here!
+export function simpleFizzBuzz(number) {
+  if (number === undefined) throw new Error("number is required");
+  if (number % 3 === 0 && number % 5 === 0) return "fizzbuzz";
+  if (number % 3 === 0) return "fizz";
+  if (number % 5 === 0) return "buzz";
+  return number;
 }

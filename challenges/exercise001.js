@@ -45,7 +45,7 @@ export function getMiddleCharacter(str) {
 
 export function reverseWord(word) {
   if (word === undefined) throw new Error("word is required");
-  // Add your code here!
+  return Array.from(word).reverse().join("");
 }
 
 export function reverseAllWords(words) {

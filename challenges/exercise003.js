@@ -14,9 +14,16 @@ export function camelCaseWords(words) {
   });
   return newArr.join("");
 }
+
 export function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
-  // Your code here!
+
+  const findTotal = (runningTotal, number) => runningTotal + number;
+
+  const subjectLengths = Object.values(people).map(
+    (person) => person.subjects.length
+  );
+  return subjectLengths.reduce(findTotal);
 }
 
 export function checkIngredients(menu, ingredient) {

@@ -16,19 +16,19 @@ export function generateInitials(firstName, lastName) {
   return `${firstName.slice(0, 1)}.${lastName.slice(0, 1)}`;
 }
 
-// TRY WITH CHANGING TO NUMBERS STRAIGHT AWAY - USING NUMBER METHODS
 export function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
   let VAT = (vatRate / 100) * originalPrice;
-  return Number((originalPrice + VAT).toFixed(2));
+  return Math.round((originalPrice + VAT) * 100) / 100;
 }
 
 export function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
   let discount = (reduction / 100) * originalPrice;
-  return parseFloat((originalPrice - discount).toFixed(2)); // tried parseFloat this time
+  // return parseFloat((originalPrice - discount).toFixed(2)); // tried parseFloat this time
+  return Math.round((originalPrice - discount) * 100) / 100;
 }
 
 export function getMiddleCharacter(str) {

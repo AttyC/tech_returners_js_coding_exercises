@@ -7,9 +7,13 @@ export function getSquares(nums) {
 
 export function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
-  // Your code here!
+  const newArr = words.map((word, index) => {
+    if (index === 0) return word;
+    if (index !== 0)
+      return word.substring(0, 1).toUpperCase() + word.substring(1);
+  });
+  return newArr.join("");
 }
-
 export function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
   // Your code here!

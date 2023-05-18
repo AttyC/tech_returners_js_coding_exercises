@@ -26,10 +26,15 @@ export function getTotalSubjects(people) {
   return subjectLengths.reduce(findTotal);
 }
 
+// this one took me a while! I tried using .find() and .filter() then I realised was overcomplicating it and could use .includes()
+// I don't like my return statement and I'm sure it can be cleaner
 export function checkIngredients(menu, ingredient) {
   if (menu === undefined) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
-  // Your code here!
+
+  let menuStuff = menu.map((m) => m.ingredients.includes(ingredient));
+
+  return menuStuff.includes(true);
 }
 
 export function duplicateNumbers(arr1, arr2) {

@@ -11,7 +11,23 @@ export const findNextNumber = (nums, n) => {
 
 export const count1sand0s = (str) => {
   if (str === undefined) throw new Error("str is required");
-  // Your code here!
+
+  const frequencies = {};
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+
+    frequencies[char] === undefined
+      ? (frequencies[char] = 1)
+      : (frequencies[char] += 1);
+
+    if (!frequencies["0"]) {
+      frequencies["0"] = 0;
+    }
+    if (!frequencies["1"]) {
+      frequencies["1"] = 0;
+    }
+  }
+  return frequencies;
 };
 
 export const reverseNumber = (n) => {

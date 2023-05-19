@@ -3,6 +3,9 @@ export const findNextNumber = (nums, n) => {
   if (n === undefined) throw new Error("n is required");
 
   const nIndex = nums.findIndex((num) => n === num);
+  if (nIndex === nums.length - 1 || nIndex === null) {
+    return null;
+  }
   return nums[nIndex + 1];
 };
 

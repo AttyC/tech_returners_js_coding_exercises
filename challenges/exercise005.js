@@ -39,7 +39,9 @@ export const reverseNumber = (n) => {
 
 export const sumArrays = (arrs) => {
   if (arrs === undefined) throw new Error("arrs is required");
-  // Your code here!
+
+  const flatArray = arrs.flat();
+  return flatArray.reduce((total, num) => (total += num));
 };
 
 export const arrShift = (arr) => {

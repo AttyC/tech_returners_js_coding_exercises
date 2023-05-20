@@ -32,7 +32,9 @@ export const count1sand0s = (str) => {
 
 export const reverseNumber = (n) => {
   if (n === undefined) throw new Error("n is required");
-  // Your code here!
+  if (n.toString().length <= 1) return n;
+  const reversedNumber = Array.from(n.toString()).reverse().join("");
+  return Number(reversedNumber);
 };
 
 export const sumArrays = (arrs) => {

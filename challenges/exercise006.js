@@ -35,6 +35,12 @@ export const sumMultiples = (arr) => {
  */
 export const isValidDNA = (str) => {
   if (str === undefined) throw new Error("str is required");
+
+  let text = str;
+  let pattern = /^[CATG]*$/i;
+  let result = text.match(pattern);
+
+  return result ? true : false;
 };
 
 /**

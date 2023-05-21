@@ -36,9 +36,9 @@ export const sumMultiples = (arr) => {
 export const isValidDNA = (str) => {
   if (str === undefined) throw new Error("str is required");
 
-  let text = str;
-  let pattern = /^[CATG]*$/i;
-  let result = text.match(pattern);
+  const text = str;
+  const pattern = /^[CATG]*$/i;
+  const result = text.match(pattern);
 
   return result ? true : false;
 };
@@ -59,6 +59,19 @@ export const getComplementaryDNA = (str) => {
  */
 export const isItPrime = (n) => {
   if (n === undefined) throw new Error("n is required");
+  if (n === 1 || n === 2) return true;
+
+  let isPrime = false;
+  if (n > 1) {
+    for (let i = 3; i < n; i++) {
+      if (n % i === 0) {
+        isPrime = false;
+        break;
+      }
+      isPrime = true;
+    }
+  }
+  return isPrime;
 };
 
 /**

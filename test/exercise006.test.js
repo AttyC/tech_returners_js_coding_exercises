@@ -1,4 +1,4 @@
-import { sumMultiples, isValidDNA } from "../challenges/exercise006";
+import { sumMultiples, isValidDNA, isItPrime } from "../challenges/exercise006";
 
 // should return the sum of any numbers which are a multiple of 3 or 5
 describe("sumMultiples", () => {
@@ -19,5 +19,16 @@ describe("isValidDNA", () => {
     expect(isValidDNA("AA")).toBe(true);
     expect(isValidDNA("HHTG")).toBe(false);
     expect(isValidDNA("012345")).toBe(false);
+  });
+});
+
+describe("isItPrime", () => {
+  test("returns true if number is prime A prime number is a number that can only be divided evenly by 1 and itself (for example, 7)", () => {
+    expect(isItPrime(7)).toBe(true);
+    expect(isItPrime(10)).toBe(false);
+    expect(isItPrime(39)).toBe(false);
+    expect(isItPrime(41)).toBe(true);
+    expect(isItPrime(516)).toBe(false);
+    expect(isItPrime(721)).toBe(false);
   });
 });

@@ -4,6 +4,7 @@ import {
   getComplementaryDNA,
   isItPrime,
   createMatrix,
+  areWeCovered,
 } from "../challenges/exercise006";
 
 // should return the sum of any numbers which are a multiple of 3 or 5
@@ -66,5 +67,18 @@ describe("createMatrix", () => {
       ["butter", "butter"],
     ]);
     expect(createMatrix(0, "fluffy")).toEqual([]);
+  });
+});
+
+describe("areWeCovered", () => {
+  let staff = [
+    { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+    { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+    { name: "Halima", rota: ["Monday", "Sunday", "Friday", "Wednesday"] },
+    { name: "Kwame", rota: ["Tuesday", "Wednesday", "Saturday", "Sunday"] },
+  ];
+  test("return true/false depending on whether there are enough staff scheduled for the given day", () => {
+    expect(areWeCovered(staff, "Wednesday")).toBe(true);
+    expect(areWeCovered(staff, "Saturday")).toBe(false);
   });
 });

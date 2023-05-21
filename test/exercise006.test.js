@@ -1,4 +1,9 @@
-import { sumMultiples, isValidDNA, isItPrime } from "../challenges/exercise006";
+import {
+  sumMultiples,
+  isValidDNA,
+  getComplementaryDNA,
+  isItPrime,
+} from "../challenges/exercise006";
 
 // should return the sum of any numbers which are a multiple of 3 or 5
 describe("sumMultiples", () => {
@@ -21,6 +26,15 @@ describe("isValidDNA", () => {
     expect(isValidDNA("012345")).toBe(false);
   });
 });
+
+describe("getComplementaryDNA", () => {
+  test("returns a string of the complementary base pairs", () => {
+    expect(getComplementaryDNA("ACTG")).toBe("TGAC");
+    expect(getComplementaryDNA("AAGG")).toBe("TTCC");
+  });
+});
+
+// This function will receive a valid DNA string (see above) and should return a string of the complementary base pairs. In DNA, T always pairs with A, and C always pairs with G. So a string of "ACTG" would have a complementary DNA string of "TGAC".
 
 describe("isItPrime", () => {
   test("returns true if number is prime A prime number is a number that can only be divided evenly by 1 and itself (for example, 7)", () => {

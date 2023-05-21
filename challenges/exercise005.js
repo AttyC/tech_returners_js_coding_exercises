@@ -3,7 +3,7 @@ export const findNextNumber = (nums, n) => {
   if (n === undefined) throw new Error("n is required");
 
   const nIndex = nums.findIndex((num) => n === num);
-  if (nIndex === nums.length - 1 || nIndex === null) {
+  if (nIndex === nums.length - 1 || nIndex === -1) {
     return null;
   }
   return nums[nIndex + 1];
@@ -18,7 +18,7 @@ export const count1sand0s = (str) => {
 
     frequencies[char] === undefined
       ? (frequencies[char] = 1)
-      : (frequencies[char] += 1);
+      : frequencies[char]++;
 
     if (!frequencies["0"]) {
       frequencies["0"] = 0;
@@ -70,5 +70,17 @@ export const findNeedle = (haystack, searchTerm) => {
 
 export const getWordFrequencies = (str) => {
   if (str === undefined) throw new Error("str is required");
-  // Your code here!
+
+  const wordsArray = str.split(" ");
+  const frequencies = {};
+
+  for (let i = 0; i < wordsArray.length; i++) {
+    let word = wordsArray[i].toLowerCase();
+    word = word.replace(/[^a-zA-Z0-9 ]/, "");
+
+    frequencies[word] === undefined
+      ? (frequencies[word] = 1)
+      : frequencies[word]++;
+  }
+  return frequencies;
 };

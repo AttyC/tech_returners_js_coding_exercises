@@ -3,6 +3,7 @@ import {
   isValidDNA,
   getComplementaryDNA,
   isItPrime,
+  createMatrix,
 } from "../challenges/exercise006";
 
 // should return the sum of any numbers which are a multiple of 3 or 5
@@ -34,8 +35,6 @@ describe("getComplementaryDNA", () => {
   });
 });
 
-// This function will receive a valid DNA string (see above) and should return a string of the complementary base pairs. In DNA, T always pairs with A, and C always pairs with G. So a string of "ACTG" would have a complementary DNA string of "TGAC".
-
 describe("isItPrime", () => {
   test("returns true if number is prime A prime number is a number that can only be divided evenly by 1 and itself (for example, 7)", () => {
     expect(isItPrime(7)).toBe(true);
@@ -44,5 +43,28 @@ describe("isItPrime", () => {
     expect(isItPrime(41)).toBe(true);
     expect(isItPrime(516)).toBe(false);
     expect(isItPrime(721)).toBe(false);
+  });
+});
+
+/**
+ * This function should receive a number and return an array of n arrays, each filled with n items. The parameter "fill" should be used as the filler of the arrays. For example, given parameters 3 and "foo" the resulting matrix should be:
+ * [
+ *   ["foo", "foo", "foo"],
+ *   ["foo", "foo", "foo"],
+ *   ["foo", "foo", "foo"]
+ * ] */
+
+describe("createMatrix", () => {
+  test("returns an array of n arrays, each filled with n items", () => {
+    expect(createMatrix(3, "foo")).toEqual([
+      ["foo", "foo", "foo"],
+      ["foo", "foo", "foo"],
+      ["foo", "foo", "foo"],
+    ]);
+    expect(createMatrix(2, "butter")).toEqual([
+      ["butter", "butter"],
+      ["butter", "butter"],
+    ]);
+    expect(createMatrix(0, "fluffy")).toEqual([]);
   });
 });

@@ -1,14 +1,13 @@
 /* 
 	👉 These exercises are a great extra challenge to push your JavaScript skills. Go for it!
 */
-
+export const reducer = (total, num) => total + num;
 /**
  * This function takes a number, e.g. 123 and returns the sum of all its digits, e.g 6 in this example.
  * @param {Number} n
  */
 export const sumDigits = (n) => {
   if (n === undefined) throw new Error("n is required");
-  const reducer = (total, num) => total + num;
 
   const arrayNToString = Array.from(n.toString());
   const arrayConvertToNumber = arrayNToString.map((l) => (l = Number(l)));
@@ -69,6 +68,24 @@ export const createRange = (start, end, step = 1) => {
 export const getScreentimeAlertList = (users, date) => {
   if (users === undefined) throw new Error("users is required");
   if (date === undefined) throw new Error("date is required");
+  let timeSpent = [];
+  let usersOverLimit = [];
+  let totalTimeSpent;
+
+  users.map((user) => {
+    user.screenTime.map((item) => {
+      if (item.date === date) {
+        for (let key in item.usage) {
+          timeSpent = [...timeSpent, item.usage[key]];
+        }
+        totalTimeSpent = timeSpent.reduce(reducer);
+        if (totalTimeSpent > 100) {
+          usersOverLimit = [...usersOverLimit, user.username];
+        }
+      }
+    });
+  });
+  return usersOverLimit;
 };
 
 /**

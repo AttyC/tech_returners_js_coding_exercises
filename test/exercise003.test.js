@@ -22,6 +22,8 @@ describe("camelCaseWords", () => {
     expect(camelCaseWords(["is", "higher", "than", "min", "number"])).toBe(
       "isHigherThanMinNumber"
     );
+        expect(camelCaseWords(["WILL", "tHiS", "wORk"])).toBe("willThisWork");
+      
   });
 });
 

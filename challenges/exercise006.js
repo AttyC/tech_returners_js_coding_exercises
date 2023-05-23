@@ -38,9 +38,7 @@ export const isValidDNA = (str) => {
 
   const text = str;
   const pattern = /^[CATG]*$/i;
-  const result = text.match(pattern);
-
-  return result ? true : false;
+  return text.match(pattern) !== null;
 };
 
 /**

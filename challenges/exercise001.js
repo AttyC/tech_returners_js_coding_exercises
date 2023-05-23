@@ -6,7 +6,6 @@
 
 export function capitalize(word) {
   if (word === undefined) throw new Error("word is required");
-  if (/[ A-Z]/.test(word.substring(0, 1))) return word;
   return word.substring(0, 1).toUpperCase() + word.substring(1);
 }
 
@@ -33,14 +32,10 @@ export function getSalePrice(originalPrice, reduction) {
 
 export function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");
-  let start;
+  let start = str.length % 2 === 0 ? str.length / 2 - 1 : (str.length - 1) / 2;
 
-  if (str.length % 2 === 0) {
-    start = str.length / 2 - 1;
-    return str.slice(start, start + 2);
-  }
-  start = (str.length - 1) / 2;
-  return str.slice(start, start + 1);
+  let lengthOfString = str.length % 2 === 0 ? 2 : 1;
+  return str.slice(start, start + lengthOfString);
 }
 
 export function reverseWord(word) {

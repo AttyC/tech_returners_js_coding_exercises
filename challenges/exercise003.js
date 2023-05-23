@@ -1,16 +1,14 @@
 export function getSquares(nums) {
   if (nums === undefined) throw new Error("nums is required");
-  let squaredNums = [];
-  nums.map((num) => (squaredNums = [...squaredNums, num * num]));
-  return squaredNums;
+  return nums.map((n) => n * n);
 }
 
 export function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
   const newArr = words.map((word, index) => {
-    if (index === 0) return word;
-    if (index !== 0)
-      return word.substring(0, 1).toUpperCase() + word.substring(1);
+    return index === 0
+      ? word.toLowerCase()
+      : word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();
   });
   return newArr.join("");
 }
@@ -26,15 +24,11 @@ export function getTotalSubjects(people) {
   return subjectLengths.reduce(findTotal);
 }
 
-// this one took me a while! I tried using .find() and .filter() then I realised was overcomplicating it and could use .includes()
-// I don't like my return statement and I'm sure it can be cleaner
 export function checkIngredients(menu, ingredient) {
   if (menu === undefined) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
 
-  let menuStuff = menu.map((m) => m.ingredients.includes(ingredient));
-
-  return menuStuff.includes(true);
+  return menu.some((m) => m.ingredients.includes(ingredient));
 }
 
 export function duplicateNumbers(arr1, arr2) {

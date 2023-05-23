@@ -6,12 +6,12 @@ import {
   addressLookUp,
 } from "../challenges/exercise008";
 
-describe("colours", () => {
-  test("returns a list of colours", () => {
-    const colours = ["red", "orange", "green"];
-    expect(printColours(colours)).toEqual(colours);
-  });
-});
+// describe("colours", () => {
+//   test("returns a list of colours", () => {
+//     const colours = ["red", "orange", "green"];
+//     expect(printColours(colours)).toEqual(colours);
+//   });
+// });
 
 // describe("shoppingList", () => {
 //   test("returns a list with an extra item", () => {
@@ -40,16 +40,16 @@ describe("colours", () => {
 //   });
 // });
 
-// describe("splitThatString", () => {
-//   test("returns a string split up", () => {
-//     const string = "USA";
-//     expect(splitThatString(string)).toEqual(["U", "S", "A"]);
-//   });
-//   test("returns a string split up", () => {
-//     const string = "123";
-//     expect(splitThatString(string)).toEqual(["1", "2", "3"]);
-//   });
-// });
+describe("splitThatString", () => {
+  test("returns a string split up", () => {
+    const string = "USA";
+    expect(splitThatString(string)).toEqual(["U", "S", "A"]);
+  });
+  test("returns a string split up", () => {
+    const string = "123";
+    expect(splitThatString(string)).toEqual(["1", "2", "3"]);
+  });
+});
 
 // // Optional Chaining
 

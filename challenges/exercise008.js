@@ -8,9 +8,9 @@ export function printColours(colours) {
 }
 
 export function shoppingList(list, newItem) {
-	if (!list) throw new Error('list is required');
-	if (!newItem) throw new Error('newItem is required');
-	// Your solution using the spread operator here!
+  if (!list) throw new Error("list is required");
+  if (!newItem) throw new Error("newItem is required");
+  return [...list, ...newItem];
 }
 
 export function highestNumber(numbers) {

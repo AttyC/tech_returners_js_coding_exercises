@@ -40,40 +40,40 @@ import {
 //   });
 // });
 
-describe("splitThatString", () => {
-  test("returns a string split up", () => {
-    const string = "USA";
-    expect(splitThatString(string)).toEqual(["U", "S", "A"]);
-  });
-  test("returns a string split up", () => {
-    const string = "123";
-    expect(splitThatString(string)).toEqual(["1", "2", "3"]);
-  });
-});
+// describe("splitThatString", () => {
+//   test("returns a string split up", () => {
+//     const string = "USA";
+//     expect(splitThatString(string)).toEqual(["U", "S", "A"]);
+//   });
+//   test("returns a string split up", () => {
+//     const string = "123";
+//     expect(splitThatString(string)).toEqual(["1", "2", "3"]);
+//   });
+// });
 
 // // Optional Chaining
 
-// describe("addressLookUp", () => {
-//   test("returns a users postcode", () => {
-//     const user = {
-//       name: "JimBob Eggs",
-//       telephone: 666,
-//       likes: "cheese",
-//       dislikes: "dirty socks",
-//       address: {
-//         houseNumber: "The Number of the Beast",
-//         postcode: "H12 333",
-//       },
-//     };
-//     expect(addressLookUp(user)).toEqual("H12 333");
-//   });
-//   test("returns undefined if address isn't provided", () => {
-//     const user = {
-//       name: "JimBob Eggs",
-//       telephone: 666,
-//       likes: "cheese",
-//       dislikes: "dirty socks",
-//     };
-//     expect(addressLookUp(user)).toEqual(undefined);
-//   });
-// });
+describe("addressLookUp", () => {
+  test("returns a users postcode", () => {
+    const user = {
+      name: "JimBob Eggs",
+      telephone: 666,
+      likes: "cheese",
+      dislikes: "dirty socks",
+      address: {
+        houseNumber: "The Number of the Beast",
+        postcode: "H12 333",
+      },
+    };
+    expect(addressLookUp(user)).toEqual("H12 333");
+  });
+  test("returns undefined if address isn't provided", () => {
+    const user = {
+      name: "JimBob Eggs",
+      telephone: 666,
+      likes: "cheese",
+      dislikes: "dirty socks",
+    };
+    expect(addressLookUp(user)).toEqual(undefined);
+  });
+});

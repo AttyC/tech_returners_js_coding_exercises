@@ -12,3 +12,10 @@ export function generateInitials(firstName: string, lastName: string): string {
   if (lastName === undefined) throw new Error("lastName is required");
   return `${firstName.slice(0, 1)}.${lastName.slice(0, 1)}`;
 }
+
+export function addVAT(originalPrice: number, vatRate: number): number {
+  if (originalPrice === undefined) throw new Error("originalPrice is requied");
+  if (vatRate === undefined) throw new Error("vatRate is required");
+  let VAT = (vatRate / 100) * originalPrice;
+  return Math.round((originalPrice + VAT) * 100) / 100;
+}

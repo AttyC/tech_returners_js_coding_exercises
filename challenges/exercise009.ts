@@ -35,3 +35,8 @@ export function getMiddleCharacter(str: string): string {
   let lengthOfString = str.length % 2 === 0 ? 2 : 1;
   return str.slice(start, start + lengthOfString);
 }
+
+export function reverseWord(word: Word): Word {
+  if (word === undefined) throw new Error("word is required");
+  return Array.from(word).reverse().join("");
+}

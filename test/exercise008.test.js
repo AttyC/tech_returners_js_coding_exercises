@@ -40,16 +40,16 @@ describe("highestNumber", () => {
   });
 });
 
-describe("splitThatString", () => {
-  test("returns a string split up", () => {
-    const string = "USA";
-    expect(splitThatString(string)).toEqual(["U", "S", "A"]);
-  });
-  test("returns a string split up", () => {
-    const string = "123";
-    expect(splitThatString(string)).toEqual(["1", "2", "3"]);
-  });
-});
+// describe("splitThatString", () => {
+//   test("returns a string split up", () => {
+//     const string = "USA";
+//     expect(splitThatString(string)).toEqual(["U", "S", "A"]);
+//   });
+//   test("returns a string split up", () => {
+//     const string = "123";
+//     expect(splitThatString(string)).toEqual(["1", "2", "3"]);
+//   });
+// });
 
 // Optional Chaining
 

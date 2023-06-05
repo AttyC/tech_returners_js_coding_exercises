@@ -27,3 +27,11 @@ export function getSalePrice(originalPrice: number, reduction: number): number {
   // return parseFloat((originalPrice - discount).toFixed(2)); // tried parseFloat this time
   return Math.round((originalPrice - discount) * 100) / 100;
 }
+
+export function getMiddleCharacter(str: string): string {
+  if (str === undefined) throw new Error("str is required");
+  let start = str.length % 2 === 0 ? str.length / 2 - 1 : (str.length - 1) / 2;
+
+  let lengthOfString = str.length % 2 === 0 ? 2 : 1;
+  return str.slice(start, start + lengthOfString);
+}

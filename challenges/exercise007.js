@@ -100,7 +100,42 @@ export const getScreentimeAlertList = (users, date) => {
  */
 export const hexToRGB = (hexStr) => {
   if (hexStr === undefined) throw new Error("hexStr is required");
+  if (hexStr[0] !== "#" || hexStr.length !== 7)
+    throw new Error("string must be a valid HEX code");
+
+  function isHexDigit(d) {
+    // we could use a regular expression, perhaps!
+    return [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+    ].includes(d);
+  }
+
+  const hexDigits = hexStr.split("").slice(1);
+  if (hexDigits.some((char) => !isHexDigit(char))) {
+    throw new Error("hexStr must be a valid hex string");
+  }
+
+  return `rgb(${parseInt(hexStr.slice(1, 3), 16)},${parseInt(
+    hexStr.slice(3, 5),
+    16
+  )},${parseInt(hexStr.slice(5, 7), 16)})`;
 };
+
 
 /**
  * This function takes a noughts and crosses board represented as an array, where an empty space is represented with null.

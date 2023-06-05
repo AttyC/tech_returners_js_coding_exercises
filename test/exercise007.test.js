@@ -2,6 +2,7 @@ import {
   sumDigits,
   createRange,
   getScreentimeAlertList,
+  hexToRGB,
 } from "../challenges/exercise007";
 
 // This function takes a number, e.g. 123 and returns the sum of all its digits, e.g 6 in this example.
@@ -124,9 +125,13 @@ describe("getScreentimeAlertList", () => {
  * @param {String} str
  */
 
-// describe("hexToRGB", () => {
-//   test("return an array of usernames of users who have used more than 100 minutes of screentime for a given date.", () => {
-//     expect(hexToRGB(users, "2019-05-01")).toEqual(["beth_1234"]);
-//     expect(hexToRGB(users, "2019-05-04")).toEqual(["beth_1234", "sam_j_1989"]);
-//   });
-// });
+describe("hexToRGB", () => {
+  test("transform the hex code into an RGB code in the format: rgb(255,17,51)", () => {
+    expect(hexToRGB("#FF1133")).toEqual("rgb(255,17,51)");
+  });
+  test("should throw an error if called without a number", () => {
+    expect(() => {
+      hexToRGB("FF1133");
+    }).toThrow("string must be a valid HEX code");
+  });
+});

@@ -45,3 +45,14 @@ export function reverseAllWords(words: Word[]): Word[] {
   if (words === undefined) throw new Error("words is required");
   return words.map((word) => reverseWord(word));
 }
+
+type User = {
+  name: string;
+  OS: string;
+  type: string;
+};
+
+export function countLinuxUsers(users: User[]): number {
+  if (users === undefined) throw new Error("users is required");
+  return users.filter((user) => user.type === "Linux").length;
+}

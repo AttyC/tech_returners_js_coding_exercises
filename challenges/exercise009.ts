@@ -40,3 +40,8 @@ export function reverseWord(word: Word): Word {
   if (word === undefined) throw new Error("word is required");
   return Array.from(word).reverse().join("");
 }
+
+export function reverseAllWords(words: Word[]): Word[] {
+  if (words === undefined) throw new Error("words is required");
+  return words.map((word) => reverseWord(word));
+}

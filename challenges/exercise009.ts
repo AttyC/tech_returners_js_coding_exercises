@@ -56,3 +56,11 @@ export function countLinuxUsers(users: User[]): number {
   if (users === undefined) throw new Error("users is required");
   return users.filter((user) => user.type === "Linux").length;
 }
+
+export function getMeanScore(scores: [number]) {
+  if (scores === undefined) throw new Error("scores is required");
+
+  const findTotal = (runningTotal: number, score: number) =>
+    runningTotal + score;
+  return parseFloat((scores.reduce(findTotal) / scores.length).toFixed(2));
+}

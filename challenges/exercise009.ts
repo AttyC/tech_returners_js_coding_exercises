@@ -19,3 +19,11 @@ export function addVAT(originalPrice: number, vatRate: number): number {
   let VAT = (vatRate / 100) * originalPrice;
   return Math.round((originalPrice + VAT) * 100) / 100;
 }
+
+export function getSalePrice(originalPrice: number, reduction: number): number {
+  if (originalPrice === undefined) throw new Error("originalPrice is required");
+  if (reduction === undefined) throw new Error("reduction is required");
+  let discount = (reduction / 100) * originalPrice;
+  // return parseFloat((originalPrice - discount).toFixed(2)); // tried parseFloat this time
+  return Math.round((originalPrice - discount) * 100) / 100;
+}
